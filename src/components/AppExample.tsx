@@ -1,6 +1,6 @@
 // Example of how to integrate CharacterStage into your App.tsx
 
-import CharacterStage from './components/CharacterStage'
+import CharacterStage from './CharacterStage'
 
 function AppWithCharacter() {
   return (

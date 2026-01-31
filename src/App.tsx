@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import CharacterStage from './components/CharacterStage'
 import Luffy from './components/LuffyCharacter'
 import ZorroCharacter from './components/ZorroCharacter'
 
@@ -13,17 +10,15 @@ const noImages = [
   'src/assets/No3.gif',
   'src/assets/No4.gif',
   'src/assets/No5.gif',
-  'src/assets/No6.gif', // filler
-  'src/assets/placeholder2.gif', // filler
+
 ];
 
 // Array of Yes images
 const yesImages = [
   'src/assets/Yes1.gif',
   'src/assets/Yes2.gif',
-  'src/assets/Yes3.gif',
-  'src/assets/placeholder3.gif', // filler
-  'src/assets/placeholder4.gif', // filler
+  // 'src/assets/Yes3.gif',
+
 ];
 
 // Simple Datepicker component
@@ -37,6 +32,10 @@ function App() {
   const [yesClickCount, setYesClickCount] = useState(0)
   const [getCurrentImage, setCurrentImage] = useState('src/assets/default.gif')
   const [selectedCharacter, setSelectedCharacter] = useState<'luffy' | 'zorro'>('luffy')
+
+  // const toggleYesLock = () => {
+  //   setYesLock(!yesLock);
+  // }
 
   // Check if the selected date is Valentine's Day (February 14th)
   const isValentinesDay = () => {
@@ -62,7 +61,7 @@ function App() {
     }
     const index = Math.min(yesClickCount, yesImages.length - 1)
     setCurrentImage(yesImages[index])
-    alert("Yay! Happy Valentine's Day! ❤️")
+    // alert("Yay! Happy Valentine's Day! ❤️")
   }
 
   const noHandler = () => {
@@ -113,6 +112,8 @@ function App() {
             </button>
           </div>
 
+          
+
           {/* Character Selector */}
           <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <button 
@@ -130,7 +131,7 @@ function App() {
             >
               🏴‍☠️ Luffy
             </button>
-            <button 
+            {/* <button 
               onClick={() => setSelectedCharacter('zorro')}
               style={{
                 padding: '10px 20px',
@@ -144,8 +145,9 @@ function App() {
               }}
             >
               ⚔️ Zorro
-            </button>
+            </button>         */}
           </div>
+          
         </>
       )}
       

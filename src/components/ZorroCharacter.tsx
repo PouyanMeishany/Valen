@@ -39,9 +39,9 @@ const ZorroCharacter = memo(function ZorroCharacter() {
     },
     {
       name: 'run',
-      sheet: '/zoro-run.png',
-      framewidth: 270,   // Update if different sprite sheet
-      frameheight: 202,  // Update if different sprite sheet
+      sheet: '/zoro-animation-3.png',  // Using existing sprite sheet
+      framewidth: 270,
+      frameheight: 202,
       row: 0,
       startFrame: 0,
       frameCount: 6,
@@ -50,9 +50,9 @@ const ZorroCharacter = memo(function ZorroCharacter() {
     },
     {
       name: 'jump',
-      sheet: '/zorro-jump.png',
-      framewidth: 270,   // Update if different sprite sheet
-      frameheight: 202,  // Update if different sprite sheet
+      sheet: '/zoro-big-attack.png',  // Using existing sprite sheet
+      framewidth: 270,
+      frameheight: 202,
       row: 0,
       startFrame: 0,
       frameCount: 10,

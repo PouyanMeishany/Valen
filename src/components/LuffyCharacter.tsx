@@ -122,7 +122,7 @@ const LuffyCharacter = memo(function LuffyCharacter() {
         defaultAnimation="idle"
         scale={3}            // Make character 3x bigger
         width={window.innerWidth}  // Full page width
-        height={400}         // Reduced height for bottom section
+        height={window.innerHeight}  // Full screen height
         backgroundColor={0x00}  // Transparent background (will match page bg)
         backgroundAlpha={0}  // Fully transparent
       />
