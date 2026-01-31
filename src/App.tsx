@@ -5,19 +5,19 @@ import ZorroCharacter from './components/ZorroCharacter'
 
 // Array of No images
 const noImages = [
-  'src/assets/No1.gif',
-  'src/assets/No2.gif',
-  'src/assets/No3.gif',
-  'src/assets/No4.gif',
-  'src/assets/No5.gif',
+  '/No1.gif',
+  '/No2.gif',
+  '/No3.gif',
+  '/No4.gif',
+  '/No5.gif',
 
 ];
 
 // Array of Yes images
 const yesImages = [
-  'src/assets/Yes1.gif',
-  'src/assets/Yes2.gif',
-  // 'src/assets/Yes3.gif',
+  '/yes1.gif',
+  '/Yes2.gif',
+  // '/Yes3.gif',
 
 ];
 
@@ -30,7 +30,7 @@ function App() {
   const [selectedDate, setSelectedDate] = useState('')
   const [noClickCount, setNoClickCount] = useState(0)
   const [yesClickCount, setYesClickCount] = useState(0)
-  const [getCurrentImage, setCurrentImage] = useState('src/assets/default.gif')
+  const [getCurrentImage, setCurrentImage] = useState('/default.gif')
   const [selectedCharacter, setSelectedCharacter] = useState<'luffy' | 'zorro'>('luffy')
 
   // const toggleYesLock = () => {
