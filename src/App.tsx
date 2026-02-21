@@ -1,79 +1,79 @@
 import { useState } from 'react'
 import './App.css'
-import Luffy from './components/LuffyCharacter'
-import ZorroCharacter from './components/ZorroCharacter'
+// import Luffy from './components/LuffyCharacter'
+// import ZorroCharacter from './components/ZorroCharacter'
 
 // Array of No images
-const noImages = [
-  '/No1.gif',
-  '/No2.gif',
-  '/No3.gif',
-  '/No4.gif',
-  '/No5.gif',
+// const noImages = [
+//   '/No1.gif',
+//   '/No2.gif',
+//   '/No3.gif',
+//   '/No4.gif',
+//   '/No5.gif',
 
-];
+// ];
 
-// Array of Yes images
-const yesImages = [
-  '/yes1.gif',
-  '/Yes2.gif',
-  // '/Yes3.gif',
+// // Array of Yes images
+// const yesImages = [
+//   '/yes1.gif',
+//   '/Yes2.gif',
+//   // '/Yes3.gif',
 
-];
+// ];
 
 // Simple Datepicker component
-const Datepicker = ({ onChange }: { onChange: (date: string) => void }) => {
-  return <input type="date" onChange={(e) => onChange(e.target.value)} />
-}
+// const Datepicker = ({ onChange }: { onChange: (date: string) => void }) => {
+//   return <input type="date" onChange={(e) => onChange(e.target.value)} />
+// }
 
 function App() {
-  const [selectedDate, setSelectedDate] = useState('')
-  const [noClickCount, setNoClickCount] = useState(0)
-  const [yesClickCount, setYesClickCount] = useState(0)
-  const [getCurrentImage, setCurrentImage] = useState('/default.gif')
-  const [selectedCharacter, setSelectedCharacter] = useState<'luffy' | 'zorro'>('luffy')
+  // const [selectedDate, setSelectedDate] = useState('')
+  // const [noClickCount, setNoClickCount] = useState(0)
+  // const [yesClickCount, setYesClickCount] = useState(0)
+  // const [getCurrentImage, setCurrentImage] = useState('/default.gif')
+  // const [selectedCharacter, setSelectedCharacter] = useState<'luffy' | 'zorro'>('luffy')
 
   // const toggleYesLock = () => {
   //   setYesLock(!yesLock);
   // }
 
   // Check if the selected date is Valentine's Day (February 14th)
-  const isValentinesDay = () => {
-    if (!selectedDate) return false
-    const date = new Date(selectedDate)
-    return date.getMonth() === 1 && date.getDate() === 14 // Month is 0-indexed, so 1 = February
-  }
+  // const isValentinesDay = () => {
+  //   if (!selectedDate) return false
+  //   const date = new Date(selectedDate)
+  //   return date.getMonth() === 1 && date.getDate() === 14 // Month is 0-indexed, so 1 = February
+  // }
 
-  const resetNoCounts = () => {
-    setNoClickCount(0)
-  }
-  const resetYesCounts = () => {
-    setYesClickCount(0)
-  }
+  // const resetNoCounts = () => {
+  //   setNoClickCount(0)
+  // }
+  // const resetYesCounts = () => {
+  //   setYesClickCount(0)
+  // }
 
-  const yesHandler = () => {
-    console.log("current image", getCurrentImage)
-    if (yesClickCount >= yesImages.length -1) {
-      resetYesCounts()
-    }
-    else {
-      setYesClickCount(prev => prev + 1)
-    }
-    const index = Math.min(yesClickCount, yesImages.length - 1)
-    setCurrentImage(yesImages[index])
-    // alert("Yay! Happy Valentine's Day! ❤️")
-  }
+  // const yesHandler = () => {
+  //   console.log("current image", getCurrentImage)
+  //   if (yesClickCount >= yesImages.length -1) {
+  //     resetYesCounts()
+  //   }
+  //   else {
+  //     setYesClickCount(prev => prev + 1)
+  //   }
+  //   const index = Math.min(yesClickCount, yesImages.length - 1)
+  //   setCurrentImage(yesImages[index])
+  //   // alert("Yay! Happy Valentine's Day! ❤️")
+  // }
 
-  const noHandler = () => {
-    if (noClickCount >= noImages.length - 1) {
-      resetNoCounts()
-    }
-    else {
-      setNoClickCount(prev => prev + 1)
-    }
-    const index = Math.min(noClickCount, noImages.length - 1)
-    setCurrentImage(noImages[index])
-  }
+  // const noHandler = () => {
+  //   if (noClickCount >= noImages.length - 1) {
+  //     resetNoCounts()
+  //   }
+  //   else {
+  //     setNoClickCount(prev => prev + 1)
+  //   }
+  //   const index = Math.min(noClickCount, noImages.length - 1)
+  //   setCurrentImage(noImages[index])
+  // }
 
   // Get current image based on click counts
   // const getCurrentImage = () => {
@@ -90,7 +90,8 @@ function App() {
 
   return (
     <div className='container'>
-      {!isValentinesDay() && <Datepicker onChange={setSelectedDate} />}
+      <img src="/meh.png" alt="sad" />
+      {/* {!isValentinesDay() && <Datepicker onChange={setSelectedDate} />}
 
       {isValentinesDay() && (
         <>
@@ -98,7 +99,6 @@ function App() {
             Will you be my valentine?
           </div>
 
-          {/* gif image here */}
           <div className='image-container'>
             <img className = 'img' src={getCurrentImage} alt="reaction" />
           </div>
@@ -114,7 +114,6 @@ function App() {
 
           
 
-          {/* Character Selector */}
           <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <button 
               onClick={() => setSelectedCharacter('luffy')}
@@ -131,27 +130,12 @@ function App() {
             >
               🏴‍☠️ Luffy
             </button>
-            {/* <button 
-              onClick={() => setSelectedCharacter('zorro')}
-              style={{
-                padding: '10px 20px',
-                fontSize: '16px',
-                backgroundColor: selectedCharacter === 'zorro' ? '#4ecdc4' : '#ddd',
-                color: selectedCharacter === 'zorro' ? 'white' : 'black',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontWeight: selectedCharacter === 'zorro' ? 'bold' : 'normal'
-              }}
-            >
-              ⚔️ Zorro
-            </button>         */}
+      
           </div>
           
         </>
       )}
       
-      {/* Render both characters but only show the selected one */}
       {isValentinesDay() && (
         <>
           <div style={{ display: selectedCharacter === 'luffy' ? 'block' : 'none' }}>
@@ -161,7 +145,7 @@ function App() {
             <ZorroCharacter key="zorro-game" />
           </div>
         </>
-      )}
+      )} */}
     </div>
   )
 }
