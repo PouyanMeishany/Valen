@@ -1,13 +1,288 @@
 <!doctype html>
+<!--
+  Keki — public landing / policy page.
+  Standalone static site (no build step). This repo's root IS the site —
+  deploy it to Azure Static Web Apps with App location "/".
+
+  ⚠️ Pouyan: review the specifics before going live — especially the
+  refund/cancellation terms, the service-fee wording, and the legal/operator
+  details. Replace anything that doesn't match your actual policy. The
+  "Last updated" date is set to May 2026.
+-->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>package.json</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keki — People helping people</title>
+    <meta
+      name="description"
+      content="Keki is a marketplace that connects people who need everyday tasks done with trusted local taskers. Post a task, accept a bid, pay securely."
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #0f172a;
+        --muted: #475569;
+        --brand: #2563eb;
+        --line: #e2e8f0;
+        --soft: #f8fafc;
+        --maxw: 760px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      header {
+        background: linear-gradient(160deg, #eff6ff, #ffffff);
+        border-bottom: 1px solid var(--line);
+      }
+      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+      .hero { padding: 64px 20px 48px; text-align: center; }
+      .brand {
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+      .tagline { color: var(--muted); font-size: 18px; margin: 8px 0 0; }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        padding: 16px 20px;
+        border-top: 1px solid var(--line);
+        font-size: 14px;
+      }
+      nav a { color: var(--brand); text-decoration: none; }
+      nav a:hover { text-decoration: underline; }
+      main { padding: 8px 0 64px; }
+      section { padding: 32px 0; border-bottom: 1px solid var(--line); }
+      section:last-child { border-bottom: 0; }
+      h2 { font-size: 24px; margin: 0 0 12px; letter-spacing: -0.01em; }
+      h3 { font-size: 17px; margin: 24px 0 6px; }
+      p, li { color: var(--ink); }
+      .muted { color: var(--muted); }
+      ul { padding-left: 22px; }
+      li { margin: 6px 0; }
+      .card {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px 22px;
+      }
+      a.email { color: var(--brand); font-weight: 600; }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        padding: 32px 20px 48px;
+      }
+      .updated { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header>
+      <div class="hero">
+        <h1 class="brand">Keki</h1>
+        <p class="tagline">People helping people.</p>
+      </div>
+      <nav>
+        <a href="#about">What Keki does</a>
+        <a href="#operator">Who runs it</a>
+        <a href="#payments">Payments</a>
+        <a href="#refunds">Refunds &amp; cancellations</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <section id="about">
+        <h2>What Keki does</h2>
+        <p>
+          Keki is a mobile marketplace that connects people who need everyday
+          tasks done — moving help, cleaning, assembly, handywork, errands and
+          more — with trusted local people ("taskers") who can do them.
+        </p>
+        <ul>
+          <li>
+            <strong>Posters</strong> describe a task, set a budget, and review
+            bids from nearby taskers.
+          </li>
+          <li>
+            <strong>Taskers</strong> browse open tasks, place bids, and get paid
+            for completed work.
+          </li>
+          <li>
+            Messaging, identity verification, and secure payments are built into
+            the app so both sides can transact with confidence.
+          </li>
+        </ul>
+      </section>
+
+      <section id="operator">
+        <h2>Who runs Keki</h2>
+        <p>
+          Keki is operated by <strong>Pouyan Meishany</strong>, based in Sweden.
+          We build and maintain the Keki app and platform that connects posters
+          and taskers and facilitates payments between them.
+        </p>
+        <p class="muted">
+          Keki provides the platform; the actual tasks are performed by
+          independent taskers, not by Keki itself.
+        </p>
+      </section>
+
+      <section id="payments">
+        <h2>What you're paying for</h2>
+        <p>
+          When a poster accepts a tasker's bid, the agreed amount is collected
+          through our payment processor, <strong>Stripe</strong>, and held
+          securely until the task is completed.
+        </p>
+        <ul>
+          <li>
+            <strong>Posters pay</strong> for the service they requested — the
+            price agreed with the tasker (plus any agreed material costs).
+          </li>
+          <li>
+            <strong>Funds are released</strong> to the tasker once the task is
+            marked complete.
+          </li>
+          <li>
+            Keki may charge a small <strong>service fee</strong> for operating
+            the platform and processing payments; any fee is shown before you
+            confirm a payment.
+          </li>
+          <li>
+            We never see or store your full card details — all card data is
+            handled directly by Stripe, a PCI-compliant payment provider.
+          </li>
+        </ul>
+      </section>
+
+      <section id="refunds">
+        <h2>Refunds &amp; cancellations</h2>
+        <div class="card">
+          <h3>Cancelling before work begins</h3>
+          <p>
+            If a task is cancelled by either party before the tasker has started
+            work, the held payment is <strong>refunded in full</strong> to the
+            poster's original payment method.
+          </p>
+          <h3>Cancelling after work has started</h3>
+          <p>
+            If work has already begun, contact us and we'll help the poster and
+            tasker agree a fair outcome — for example a partial refund for the
+            portion of work not completed.
+          </p>
+          <h3>Disputes</h3>
+          <p>
+            If you're not satisfied with a completed task, raise a dispute in the
+            app or email us within a reasonable time and we'll mediate between
+            both parties.
+          </p>
+          <h3>How refunds are issued</h3>
+          <p>
+            Approved refunds are returned to the original payment method via
+            Stripe. They typically appear within <strong>5–10 business
+            days</strong>, depending on your bank.
+          </p>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <h2>Privacy policy</h2>
+        <p>
+          We respect your privacy and only collect what we need to run the
+          service. This summary explains what we collect, why, and your rights.
+        </p>
+
+        <h3>Information we collect</h3>
+        <ul>
+          <li>
+            <strong>Account details</strong> — name, email, phone number, and
+            profile information you provide.
+          </li>
+          <li>
+            <strong>Task &amp; location data</strong> — tasks you post or bid on,
+            and approximate location used to match you with nearby tasks.
+          </li>
+          <li>
+            <strong>Identity verification</strong> — for taskers, a government ID
+            and selfie are verified through <strong>Stripe Identity</strong>.
+            Keki does not store the biometric data; it is processed by Stripe.
+          </li>
+          <li>
+            <strong>Payment information</strong> — handled by Stripe. We store
+            only non-sensitive references (e.g. payment status), never full card
+            numbers.
+          </li>
+          <li>
+            <strong>Messages</strong> exchanged between posters and taskers in
+            the app.
+          </li>
+        </ul>
+
+        <h3>How we use it</h3>
+        <ul>
+          <li>To operate the marketplace and match tasks with taskers.</li>
+          <li>To process payments and payouts, and prevent fraud.</li>
+          <li>To verify identity where required.</li>
+          <li>To provide support and communicate about your account.</li>
+        </ul>
+
+        <h3>Who we share it with</h3>
+        <ul>
+          <li>
+            Other users, only as needed to complete a task (e.g. a poster and
+            tasker can see each other's relevant details).
+          </li>
+          <li>
+            <strong>Service providers</strong> we rely on: Stripe (payments and
+            identity verification) and Supabase (data hosting and storage).
+          </li>
+          <li>
+            Authorities, where we're legally required to.
+          </li>
+        </ul>
+        <p class="muted">
+          We don't sell your personal data.
+        </p>
+
+        <h3>Your rights</h3>
+        <p>
+          If you're in the EU/EEA, you have rights under the GDPR — including the
+          right to access, correct, or delete your data. To exercise any of
+          these, email us at
+          <a class="email" href="mailto:pouyan.meishany@gmail.com">pouyan.meishany@gmail.com</a>
+          and we'll respond.
+        </p>
+        <p class="updated">Last updated: May 2026.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Questions, support, refunds, or privacy requests — reach us at:
+        </p>
+        <p>
+          <a class="email" href="mailto:pouyan.meishany@gmail.com">pouyan.meishany@gmail.com</a>
+        </p>
+        <p class="muted">Operated by Pouyan Meishany, Sweden.</p>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2026 Keki — People helping people.
+    </footer>
   </body>
 </html>
