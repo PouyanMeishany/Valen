@@ -86,6 +86,18 @@
         padding: 32px 20px 48px;
       }
       .updated { font-size: 13px; color: var(--muted); margin-top: 4px; }
+      .btn {
+        display: inline-block;
+        margin: 4px 0 8px;
+        padding: 11px 18px;
+        background: var(--brand);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+      .btn:hover { opacity: 0.92; }
+      .doc-note { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
     </style>
   </head>
   <body>
@@ -100,6 +112,7 @@
         <a href="#payments">Payments</a>
         <a href="#refunds">Refunds &amp; cancellations</a>
         <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -201,9 +214,34 @@
 
       <section id="privacy">
         <h2>Privacy policy</h2>
+        <!--
+          CANONICAL SOURCE — single source of truth.
+          The authoritative, always-current Privacy Policy + Terms live on
+          the backend; they are the exact documents the Keki app renders and
+          that users accept at signup. The text on this page is only a
+          plain-language summary that defers to them.
+
+          ⚠️ These are VERSIONED URLs. When the backend publishes a new
+          version (e.g. privacy-policy-1.1.html / tos-1.1.html), update the
+          two hrefs below. Better long-term: have the backend expose stable
+          /legal/privacy and /legal/terms redirects to the current version
+          and point these links there so this page never drifts again.
+        -->
         <p>
           We respect your privacy and only collect what we need to run the
-          service. This summary explains what we collect, why, and your rights.
+          service. The summary below explains what we collect, why, and your
+          rights — the full Privacy Policy is the authoritative version.
+        </p>
+        <p>
+          <a
+            class="btn"
+            href="https://keki-backend-fse9cucyf6eaeegh.swedencentral-01.azurewebsites.net/legal/privacy-policy-1.0.html"
+            >Read the full Privacy Policy →</a
+          >
+        </p>
+        <p class="doc-note">
+          The text below is a summary. The linked Privacy Policy is the
+          current, authoritative version that governs.
         </p>
 
         <h3>Information we collect</h3>
@@ -267,6 +305,22 @@
           and we'll respond.
         </p>
         <p class="updated">Last updated: May 2026.</p>
+      </section>
+
+      <section id="terms">
+        <h2>Terms of Service</h2>
+        <p>
+          Using Keki means agreeing to our Terms of Service. You also accept
+          them in the app when you create an account — the linked document is
+          the same authoritative, current version.
+        </p>
+        <p>
+          <a
+            class="btn"
+            href="https://keki-backend-fse9cucyf6eaeegh.swedencentral-01.azurewebsites.net/legal/tos-1.0.html"
+            >Read the full Terms of Service →</a
+          >
+        </p>
       </section>
 
       <section id="contact">
